@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>CNIT 133 - HW4, Part 2</title>
+  <meta name="description" content="Web Page for HW Assignment 4 of CNIT 133 - Javascript">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="css/styles.css">
+     
+     <style>
+   
+    
+      body {
+          background-color:cadetblue
+      }
+         #holygrail-container{display:grid; grid-template-columns: 190px 1fr 190px; background: cadetblue; height: 100%; min-width: 400px; min-height: 270px;
+         }
+        
+         header, footer {grid-column: span 4;
+                        }
+         
+         nav {display: inline; padding-bottom: 25px; display: flex; align-items: center;
+             }
+           
+            nav ul{list-style-type:none; padding:0; 
+                  }
+            
+            nav ul li{ display: inline-block;
+                       margin:0 5px;
+                       border:2px solid black;
+                      border-radius: 10px;
+                       margin-right: 350px;
+                       background-color: cadetblue;
+                       text-align:center;
+                       width: 150px;
+                       height: 30px; 
+                       line-height:30px;
+                        margin-bottom: 5px;}
+            
+            nav ul li a {text-decoration: none; font-weight: bold; color:white;
+                        }
+         
+         ul li { list-style-type: none; 
+         }
+      
+
+    </style>
+</head>
+<body>
+
+ <header>
+  <h1 style="text-align:center">CNIT 133 Homework 4 - Looping Statements </h1>
+            </header>
+         
+             <nav>
+    <ul>
+            <li><a href="https://pettycarlos.github.io/CNIT-133-Homework-1/">Homepage</a></li>
+             <li><a href="https://pettycarlos.github.io/hw2/">Homework 2</a></li>
+            <li><a href= "https://pettycarlos.github.io/hw3/">Homework 3</a></li>
+            <li><a href= "https://pettycarlos.github.io/CNIT-133-hw4/">Homework 4</a></li>
+            <li><a href="https://pettycarlos.github.io/hw5/">Homework 5</a></li>
+            <li><a href="https://pettycarlos.github.io/hw6/">Homework 6</a></li>
+            <li><a href= "https://pettycarlos.github.io/hw7/">Homework 7</a></li>
+            <li><a href="https://pettycarlos.github.io/hw8/">Homework 8</a></li>
+            
+        </ul>
+            </nav>
+            
+        
+         <ol>
+  <li><a href="hw4pt1a.html">Part 1 A and B - For Statement and While Statement </a></li>
+  <li><a href="hw4pt2.html">Part 2 - Calculating Compound Interest</a></li>
+  
+</ol>
+
+  
+
+  <section>
+    <p class="explanation">The table below displays the compound interest on a principal of $1,000 for interest rates of 5%, 6%, and 7%, for years 1 through 10.</p>
+    <div class="hw4-part1-divbox">
+      <h2>C</h2><br>
+      <script>
+
+      for (var i = 0.05; i <= 0.07; i += 0.01){
+        document.write("<table style='border: 1px solid black; width: 100%; background-color: maroon; color: white; table-layout: fixed; border-collapse: collapse; padding: 20px;'> <tr> <th style='border: 1px solid black; padding: 8px;'> Year </th> <th style='border: 1px solid black; padding: 8px;'> Amount On Deposit </th> <th style='border: 1px solid black; padding: 8px;'> Interest Rate </th> </tr> </table>");
+          for (var j = 1; j <= 10; j++){
+            var a, p, r, n, inner;
+            p = 1000;
+            r = i;
+            n = j;
+            inner = 1 + r;
+            a = p * Math.pow(inner, n);
+            a = a.toFixed(2);
+            var currFormatter = new Intl.NumberFormat(undefined, {style: "currency", currency: "USD"});
+            var fc;
+            fc = currFormatter.format(a);
+            document.write("<table style='width: 100%; text-align: left;  table-layout: fixed;'><tr><td style='border: 1px solid black; padding: 8px;'>" + j + "</td><td style='border: 1px solid black; padding: 8px;'>" + fc + "</td><td style='border: 1px solid black; padding: 8px;'>" + i.toFixed(2) + "%</td></tr></table>");
+          }
+        }
+          $(document).ready(function()
+{
+    $("tr:odd").css("background-color", "green");
+});
+
+      </script>
+    </div>
+
+   
+  </section>
+
+  
+
+  
+</body>
+</html>
